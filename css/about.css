@@ -1,0 +1,46 @@
+.about {
+    margin: 20px auto;
+    max-width: 800px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.features li::before {
+    content: "✔️";
+    margin-right: 10px;
+    color: #007bff;
+}
+
+.reviews blockquote {
+    margin: 15px 0;
+    padding: 10px 15px;
+    border-left: 4px solid #007bff;
+    background: #f9f9f9;
+    font-style: italic;
+}
+.grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 20px;
+}
+
+.card {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+}

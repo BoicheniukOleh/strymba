@@ -1,0 +1,270 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #282c34;
+    color: white;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    color: white;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+nav a:hover {
+    background-color: #444;
+}
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+.game-info {
+    background: linear-gradient(to bottom, #fff, #dff1ff);
+    padding: 50px 20px;
+    text-align: center;
+}
+.game-info h2 {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+.game-info p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+.game-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.game {
+    text-align: center;
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: white;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.game img {
+    width: 100%;
+    border-radius: 5px;
+}
+.game:hover {
+    transform: scale(1.05);
+}
+.download-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.download-button:hover {
+    background-color: #0056b3;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #282c34;
+    color: white;
+}
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+}
+  /* Світла тема */
+  body {
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+header, footer {
+    background-color: #282c34;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+.game-info {
+    background: linear-gradient(to bottom, #fff, #dff1ff);
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+.game {
+    background-color: white;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+.download-button {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Темна тема */
+body.dark-mode {
+    background-color: #121212;
+    color: #f4f4f4;
+}
+body.dark-mode header, body.dark-mode footer  {
+    background-color: #1e1e1e;
+    color: #f4f4f4;
+}
+body.dark-mode .game-info, body.dark-mode section {
+    background: linear-gradient(to bottom, #1e1e1e, #2c2c2c);
+    color: #f4f4f4;
+}
+body.dark-mode .game  {
+    background-color: #2c2c2c;
+    color: #f4f4f4;
+}
+body.dark-mode .download-button {
+    background-color: #0056b3;
+    color: white;
+}
+.feedback {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.feedback form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.feedback input, .feedback textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.feedback button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.feedback button:hover {
+    background-color: #0056b3;
+}
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #282c34;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background: #007bff;
+    z-index: 1000;
+    transition: width 0.2s ease-out;
+}
+/* Стилі секції цитат */
+#quotes {
+    text-align: center;
+    padding: 20px;
+    background: #eef;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#quotes h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#quotes blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 20px 0;
+    color: inherit;
+}
+
+#new-quote {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#new-quote:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Темна тема для секції цитат */
+body.dark-mode #quotes {
+    background: #1e1e1e;
+    color: #f4f4f4;
+}
+
+body.dark-mode #new-quote {
+    background-color: #0056b3;
+}
+

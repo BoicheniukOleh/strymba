@@ -4,42 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strymba</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
     <header>
+        <div id="progress-bar"></div>
         <h1>Ласкаво просимо до Strymba</h1>
-        <p>Відчуйте неймовірні пригоди у Strymba: Частина 2 та Частина 3!</p>
-    </header>
+        <p>Відчуйте неймовірні пригоди у Strymba: Частина 2 та DLC, а також Частина 3!</p>
+    <nav>
+        <div class="menu-toggle">☰</div>
+        <div class="nav-links">
+            <a href="index.html">Головна</a>
+            <a href="#">Про гру</a>
+            <a href="#">Галерея</a>
+            <a href="#">Контакти</a>
+        </div>
+    </nav>
+   </header>
     <main>
-        <section class="game-info">
+        <div class="theme-switcher">
+            <label>
+                <input type="checkbox" id="theme-toggle"> Темна тема
+            </label>
+        </div>
+        <section id="game-info" class="game-info">
             <h2>Про гру</h2>
-            <p>Strymba — це захоплююча новелла, яка перенесе вас у дивовижні світи та запропонує складні випробування. Оберіть свою подорож:</p>
+            <p>Strymba — це серія інтерактивних новел, що відкривають двері до неймовірних пригод у вигаданих світах.</p>
+            <p>Ви знайдете себе в епіцентрі доленосних подій, взаємодіятимете з унікальними персонажами та прийматимете рішення, які впливатимуть на подальший розвиток історії.</p>
+            <p>Оберіть одну з частин гри та почніть свою незабутню подорож!</p>
             <div class="game-options">
                 <div class="game">
-                    <img src="img/dika 2.png" alt="">
+                    <img src="img/dika 2.png" alt="Strymba 2">
                     <h3>Strymba 2</h3>
                     <p>Почніть епічну сагу з цікавими персонажами, та дізнайтеся про темні сторони Богів.</p>
                     <a href="downloads/Strymba2-1.0-pc.zip" class="download-button" download>Завантажити Частину 2</a>
                 </div>
                 <div class="game">
-                    <img src="img/game_menu.png" alt="">
+                    <img src="img/game_menu.png" alt="Strymba 3 PIZDA Edition">
                     <h3>Strymba 3 PIZDA Edition</h3>
-                    <p>Завершіть захопливу історію, та зробіть надзвичайно складні вибори</p>
+                    <p>Завершіть захопливу історію, та зробіть надзвичайно складні вибори.</p>
                     <a href="downloads/Srtymba3PIZDAEdition-1.0-pc.zip" class="download-button" download>Завантажити Частину 3</a>
                 </div>
                 <div class="game">
-                    <img src="img/zalupa.jpg" alt="">
+                    <img src="img/zalupa.jpg" alt="Strymba 2 DLC">
                     <h3>Strymba 2 DLC Miron and Vitaly story</h3>
-                    <p>Пориньте в альтернативну історію Віталія та Мирона</p>
-                    <a href="downloads/Strymba2DLCMironandVitalystory-1.0-win.rar" class="download-button" download>Завантажити DLC</a>
+                    <p>Пориньте в альтернативну історію Віталія та Мирона.</p>
+                    <a href="downloads/Strymba2DLCMironandVitalystory-1.0-win.rar" class="download-button" download>Купити DLC</a>
                 </div>
             </div>
         </section>
     </main>
+    <section id="contact" class="feedback">
+        <h2>Зворотний зв'язок</h2>
+        <form>
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="message">Ваше повідомлення:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Відправити</button>
+        </form>
+    </section>
+    <section id="quotes">
+        <h2>Натхнення</h2>
+        <blockquote id="quote-display">"Гра — це історія, яку ти створюєш сам."</blockquote>
+        <button id="new-quote">Нова цитата</button>
+    </section>   
     <footer>
         <p>&copy; 2024 Розробник Strymba. За копіювання сайта вібу.</p>
         <p>Киньте грошив 5168752111095520</p>
     </footer>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('change', () => {
+        document.body.classList.toggle('dark-mode');
+    });
+    window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.style.display = 'none';
+});
+window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('progress-bar').style.width = progress + '%';
+});
+const quotes = [
+    "Гра — це історія, яку ти створюєш сам.",
+    "Немає програшу, є лише урок.",
+    "Тільки той, хто наважиться, виграє.",
+    "Ігри — це втеча в інший світ і пошук себе."
+];
+
+document.getElementById('new-quote').addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    document.getElementById('quote-display').textContent = quotes[randomIndex];
+});
+
+
+    </script>
+
 </body>
 </html>
